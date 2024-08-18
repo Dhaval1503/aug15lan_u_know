@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<title>Languages you know</title>
+		<style>
+			*{font-size:40px; font-family:Cambria;}
+			body{background-color:azure;}
+			input[type=checkbox] {width:2%; height:0.7em;}
+		</style>
+	</head>
+	<body>
+		<center>
+			<h1>Languages you know</h1>
+			<form onsubmit="show()">
+				<input type="text" placeholder="Enter name" id="name"/>
+				</br></br>
+				<input type="checkbox"  id="py"/>Python
+				<input type="checkbox" id="ja"/>Java
+				<input type="checkbox" id="js"/>JavaScript
+				</br></br>
+				<input type="submit" />
+			</form>		
+				<h2 id="msg"/>
+			<script>
+				function show()
+				{
+					event.preventDefault();
+					let name=document.getElementById("name");
+					let py=document.getElementById("py");
+					let =document.getElementById("ja");
+					let js=document.getElementById("js");
+					let msg=document.getElementById("msg");
+
+					if (name.value.trim()==="")
+					{
+						alert("name cannot be empty/blankspaces");
+						msg.innerHTML="";
+						name.focus();
+						py.checked=false;
+						ja.checked=false;
+						js.checked=false;
+						return;
+					}
+					let n=name.value;
+					let lang="";
+					if (py.checked)		lang+="Python ";
+					if (ja.checked)		lang+="Java ";
+					if(js.checked)		lang+="JavaScript ";
+					let a="Name="+n+" "+"Language="+ lang;
+					msg.innerHTML=a;
+				}
+			</script>
+		</center>
+	</body>
+</html>
